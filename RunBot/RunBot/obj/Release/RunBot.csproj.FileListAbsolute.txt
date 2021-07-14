@@ -19,3 +19,14 @@ D:\RunBot\RunBot\obj\Release\RunBot.csproj.GenerateResource.cache
 D:\RunBot\RunBot\obj\Release\RunBot.csproj.CoreCompileInputs.cache
 D:\RunBot\RunBot\obj\Release\RunBot.exe
 D:\RunBot\RunBot\obj\Release\RunBot.pdb
+D:\Dx\RunBot\RunBot\bin\Release\RunBot.exe.config
+D:\Dx\RunBot\RunBot\bin\Release\RunBot.exe
+D:\Dx\RunBot\RunBot\bin\Release\RunBot.pdb
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.csprojAssemblyReference.cache
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.FrmDxBot.resources
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.FrmPcsBot.resources
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.Properties.Resources.resources
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.csproj.GenerateResource.cache
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.csproj.CoreCompileInputs.cache
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.exe
+D:\Dx\RunBot\RunBot\obj\Release\RunBot.pdb
