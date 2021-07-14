@@ -22,7 +22,6 @@ D:\RunBot\RunBot\obj\Debug\RunBot.csproj.AssemblyReference.cache
 D:\Dx\RunBot\RunBot\bin\Debug\RunBot.exe.config
 D:\Dx\RunBot\RunBot\bin\Debug\RunBot.exe
 D:\Dx\RunBot\RunBot\bin\Debug\RunBot.pdb
-D:\Dx\RunBot\RunBot\obj\Debug\RunBot.csprojAssemblyReference.cache
 D:\Dx\RunBot\RunBot\obj\Debug\RunBot.FrmDxBot.resources
 D:\Dx\RunBot\RunBot\obj\Debug\RunBot.FrmPcsBot.resources
 D:\Dx\RunBot\RunBot\obj\Debug\RunBot.Properties.Resources.resources
