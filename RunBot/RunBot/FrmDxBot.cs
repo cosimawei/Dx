@@ -91,7 +91,7 @@ namespace RunBot
             if (dtTo.TotalSeconds <= 0.0)//当倒计时完毕
             {
 
-                Process.Start(Assembly.GetExecutingAssembly().Location + "\\dxBuy.bat");
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\dxBuy.bat");
                 lblShow.Text = string.Empty;
                 timer1.Enabled = false;   //其中可自行添加相应的提示框或者方法函数
             }
@@ -107,7 +107,7 @@ namespace RunBot
                 return;
             }
 
-            Process.Start(Assembly.GetExecutingAssembly().Location + "\\dxBuy.bat");
+            Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\dxBuy.bat");
 
         }
 
@@ -122,7 +122,7 @@ namespace RunBot
             for (int i = 0; i < 3; i++)
             {
 
-                Process.Start(Assembly.GetExecutingAssembly().Location + "\\dxBuy.bat");
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\dxBuy.bat");
             }
         }
 
