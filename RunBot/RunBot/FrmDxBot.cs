@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -89,7 +90,8 @@ namespace RunBot
 
             if (dtTo.TotalSeconds <= 0.0)//当倒计时完毕
             {
-                Process.Start(Application.StartupPath + "\\dxBuy.bat");
+
+                Process.Start(Assembly.GetExecutingAssembly().Location + "\\dxBuy.bat");
                 lblShow.Text = string.Empty;
                 timer1.Enabled = false;   //其中可自行添加相应的提示框或者方法函数
             }
@@ -105,7 +107,7 @@ namespace RunBot
                 return;
             }
 
-            Process.Start(Application.StartupPath + "\\dxBuy.bat");
+            Process.Start(Assembly.GetExecutingAssembly().Location + "\\dxBuy.bat");
 
         }
 
@@ -119,7 +121,8 @@ namespace RunBot
 
             for (int i = 0; i < 3; i++)
             {
-                Process.Start(Application.StartupPath + "\\dxBuy.bat");
+
+                Process.Start(Assembly.GetExecutingAssembly().Location + "\\dxBuy.bat");
             }
         }
 
