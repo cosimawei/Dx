@@ -352,6 +352,13 @@ namespace RunBot
             }
         }
 
-   
+        private void chkKnowsPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkKnowsPass.Checked)
+                txtmnemonic.UseSystemPasswordChar = false;
+            else
+                txtmnemonic.UseSystemPasswordChar = true;
+
+        }
     }
 }

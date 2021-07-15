@@ -58,12 +58,14 @@ namespace RunBot
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.chkKnowsPass = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkKnowsPass);
             this.groupBox1.Controls.Add(this.lblShow);
             this.groupBox1.Controls.Add(this.txtS);
             this.groupBox1.Controls.Add(this.label5);
@@ -334,6 +336,17 @@ namespace RunBot
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // chkKnowsPass
+            // 
+            this.chkKnowsPass.AutoSize = true;
+            this.chkKnowsPass.Location = new System.Drawing.Point(502, 161);
+            this.chkKnowsPass.Name = "chkKnowsPass";
+            this.chkKnowsPass.Size = new System.Drawing.Size(72, 16);
+            this.chkKnowsPass.TabIndex = 16;
+            this.chkKnowsPass.Text = "显示明文";
+            this.chkKnowsPass.UseVisualStyleBackColor = true;
+            this.chkKnowsPass.CheckedChanged += new System.EventHandler(this.chkKnowsPass_CheckedChanged);
+            // 
             // FrmDxBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -383,5 +396,6 @@ namespace RunBot
         private System.Windows.Forms.Label lblShow;
         private System.Windows.Forms.Button btnTimeExec;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.CheckBox chkKnowsPass;
     }
 }
