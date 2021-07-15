@@ -63,7 +63,7 @@ namespace RunBot
                     }
                 }
                 btnLock.Text = "解锁";
-                fileOpen();
+                fileOpen(false);
                 SaveToTxtFile();
             }
             else
@@ -137,11 +137,14 @@ namespace RunBot
             //}
         }
 
-
+        private void FrmDxBot_Load(object sender, EventArgs e)
+        {
+            fileOpen(true);
+        }
         /// <summary>
         /// 打开、读取文件
         /// </summary>
-        private void fileOpen()
+        private void fileOpen(bool status)
         {
             //打开系统日志文件
             if (!File.Exists(path))
@@ -162,37 +165,77 @@ namespace RunBot
 
 
 
-               
-            while (strLine != null)
+            if (status)
             {
-                if (strLine.Contains(amount_of_bnb_to_spend))
+                while (strLine != null)
                 {
-                    strLine = amount_of_bnb_to_spend + txtAmount.Text;
-                }
-                if (strLine.Contains(gasPrice))
-                {
-                    strLine = gasPrice + txtgasPrice.Text;
-                }
-                if (strLine.Contains(gasLimit))
-                {
-                    strLine = gasLimit + txtgasLimit.Text;
-                }
-                if (strLine.Contains(presale_address))
-                {
-                    strLine = presale_address + txtPresale_address.Text;
-                }
-                if (strLine.Contains(number_of_entries))
-                {
-                    strLine = number_of_entries + txtnum.Text;
-                }
-                if (strLine.Contains(mnemonic))
-                {
-                    strLine = mnemonic + txtmnemonic.Text;
-                }
-                strInfor += strLine + "\n";
+                    if (strLine.Contains(amount_of_bnb_to_spend))
+                    {
+                        txtAmount.Text=strLine.Replace(amount_of_bnb_to_spend,"");
+                    }
+                    if (strLine.Contains(gasPrice))
+                    {
+                        txtgasPrice.Text = strLine.Replace(gasPrice, "");
+                    }
+                    if (strLine.Contains(gasLimit))
+                    {
+                        txtgasLimit.Text = strLine.Replace(gasLimit, "");
+                 
+                    }
+                    if (strLine.Contains(presale_address))
+                    {
+                        txtPresale_address.Text = strLine.Replace(presale_address, "");
+                       
+                    }
+                    if (strLine.Contains(number_of_entries))
+                    {
+                        txtnum.Text = strLine.Replace(number_of_entries, "");
+                   
+                    }
+                    if (strLine.Contains(mnemonic))
+                    {
+                        txtmnemonic.Text = strLine.Replace(mnemonic, "");
+                  
+                    }
+                    strInfor += strLine + "\n";
 
-                strLine = m_streamReader.ReadLine();
+                    strLine = m_streamReader.ReadLine();
+                }
             }
+            else
+            {
+                while (strLine != null)
+                {
+                    if (strLine.Contains(amount_of_bnb_to_spend))
+                    {
+                        strLine = amount_of_bnb_to_spend + txtAmount.Text;
+                    }
+                    if (strLine.Contains(gasPrice))
+                    {
+                        strLine = gasPrice + txtgasPrice.Text;
+                    }
+                    if (strLine.Contains(gasLimit))
+                    {
+                        strLine = gasLimit + txtgasLimit.Text;
+                    }
+                    if (strLine.Contains(presale_address))
+                    {
+                        strLine = presale_address + txtPresale_address.Text;
+                    }
+                    if (strLine.Contains(number_of_entries))
+                    {
+                        strLine = number_of_entries + txtnum.Text;
+                    }
+                    if (strLine.Contains(mnemonic))
+                    {
+                        strLine = mnemonic + txtmnemonic.Text;
+                    }
+                    strInfor += strLine + "\n";
+
+                    strLine = m_streamReader.ReadLine();
+                }
+            }
+         
             //关闭此StreamReader对象
 
             m_streamReader.Close();
@@ -308,5 +351,7 @@ namespace RunBot
                 }
             }
         }
+
+   
     }
 }

@@ -39,6 +39,8 @@ namespace RunBot
             this.label4 = new System.Windows.Forms.Label();
             this.txtHours = new System.Windows.Forms.TextBox();
             this.btnLock = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnTimeExec = new System.Windows.Forms.Button();
             this.btnExecMore = new System.Windows.Forms.Button();
             this.btnExecNow = new System.Windows.Forms.Button();
             this.txtmnemonic = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@ namespace RunBot
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnTimeExec = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -164,6 +164,26 @@ namespace RunBot
             this.btnLock.UseVisualStyleBackColor = true;
             this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(547, 218);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(38, 23);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "取消";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnTimeExec
+            // 
+            this.btnTimeExec.Location = new System.Drawing.Point(503, 218);
+            this.btnTimeExec.Name = "btnTimeExec";
+            this.btnTimeExec.Size = new System.Drawing.Size(38, 23);
+            this.btnTimeExec.TabIndex = 8;
+            this.btnTimeExec.Text = "计时";
+            this.btnTimeExec.UseVisualStyleBackColor = true;
+            this.btnTimeExec.Click += new System.EventHandler(this.btnTimeExec_Click);
+            // 
             // btnExecMore
             // 
             this.btnExecMore.Location = new System.Drawing.Point(298, 218);
@@ -190,6 +210,7 @@ namespace RunBot
             this.txtmnemonic.Name = "txtmnemonic";
             this.txtmnemonic.Size = new System.Drawing.Size(383, 21);
             this.txtmnemonic.TabIndex = 5;
+            this.txtmnemonic.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -313,26 +334,6 @@ namespace RunBot
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnTimeExec
-            // 
-            this.btnTimeExec.Location = new System.Drawing.Point(503, 218);
-            this.btnTimeExec.Name = "btnTimeExec";
-            this.btnTimeExec.Size = new System.Drawing.Size(38, 23);
-            this.btnTimeExec.TabIndex = 8;
-            this.btnTimeExec.Text = "计时";
-            this.btnTimeExec.UseVisualStyleBackColor = true;
-            this.btnTimeExec.Click += new System.EventHandler(this.btnTimeExec_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(547, 218);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(38, 23);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "取消";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // FrmDxBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -345,6 +346,7 @@ namespace RunBot
             this.Name = "FrmDxBot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FuckDx";
+            this.Load += new System.EventHandler(this.FrmDxBot_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
