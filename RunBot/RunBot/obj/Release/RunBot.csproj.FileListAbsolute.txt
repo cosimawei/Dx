@@ -29,7 +29,6 @@ D:\Dx\RunBot\RunBot\obj\Release\RunBot.csproj.GenerateResource.cache
 D:\Dx\RunBot\RunBot\obj\Release\RunBot.csproj.CoreCompileInputs.cache
 D:\Dx\RunBot\RunBot\obj\Release\RunBot.exe
 D:\Dx\RunBot\RunBot\obj\Release\RunBot.pdb
-D:\Dx\RunBot\RunBot\obj\Release\RunBot.csprojAssemblyReference.cache
 D:\DxBot\RunBot\RunBot\bin\Release\RunBot.exe.config
 D:\DxBot\RunBot\RunBot\bin\Release\RunBot.exe
 D:\DxBot\RunBot\RunBot\bin\Release\RunBot.pdb
