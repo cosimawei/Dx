@@ -39,4 +39,3 @@ D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.csproj.GenerateResource.cache
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.csproj.CoreCompileInputs.cache
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.exe
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.pdb
-D:\Dx\RunBot\RunBot\obj\Debug\RunBot.csprojAssemblyReference.cache

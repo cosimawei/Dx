@@ -32,6 +32,7 @@ namespace RunBot
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDxBot));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkKnowsPass = new System.Windows.Forms.CheckBox();
             this.lblShow = new System.Windows.Forms.Label();
             this.txtS = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@ namespace RunBot
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.chkKnowsPass = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,17 @@ namespace RunBot
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "初始设置";
+            // 
+            // chkKnowsPass
+            // 
+            this.chkKnowsPass.AutoSize = true;
+            this.chkKnowsPass.Location = new System.Drawing.Point(502, 161);
+            this.chkKnowsPass.Name = "chkKnowsPass";
+            this.chkKnowsPass.Size = new System.Drawing.Size(72, 16);
+            this.chkKnowsPass.TabIndex = 16;
+            this.chkKnowsPass.Text = "显示明文";
+            this.chkKnowsPass.UseVisualStyleBackColor = true;
+            this.chkKnowsPass.CheckedChanged += new System.EventHandler(this.chkKnowsPass_CheckedChanged);
             // 
             // lblShow
             // 
@@ -329,23 +340,11 @@ namespace RunBot
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(727, 312);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "1.5gas 大概 0.0021b\n2.Dx预售地址为,Dx预售链接钟Token上面的地址；不是Token地址\n3.购买数量后期再解释\n4.立即执行，并发执行区别" +
-    "---A.一次性撞击。B.一次操作多次撞击（会产生更多的矿工费）\n5.助记词仅存本地，不会上传，建议使用新钱包\n6.没啥描述的了";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // chkKnowsPass
-            // 
-            this.chkKnowsPass.AutoSize = true;
-            this.chkKnowsPass.Location = new System.Drawing.Point(502, 161);
-            this.chkKnowsPass.Name = "chkKnowsPass";
-            this.chkKnowsPass.Size = new System.Drawing.Size(72, 16);
-            this.chkKnowsPass.TabIndex = 16;
-            this.chkKnowsPass.Text = "显示明文";
-            this.chkKnowsPass.UseVisualStyleBackColor = true;
-            this.chkKnowsPass.CheckedChanged += new System.EventHandler(this.chkKnowsPass_CheckedChanged);
             // 
             // FrmDxBot
             // 

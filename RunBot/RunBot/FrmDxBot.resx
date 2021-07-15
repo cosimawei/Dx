@@ -117,6 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>1.5gas 大概 0.0021b
+2.Dx预售地址为,Dx预售链接钟Token上面的地址；不是Token地址
+3.购买数量后期再解释
+4.立即执行，并发执行区别---A.一次性撞击。B.一次操作多次撞击（会产生更多的矿工费）
+5.助记词仅存本地，不会上传，建议使用新钱包
+6.没啥描述的了
+7.参考GAS
+a.gasPrice:100，Limit:600000 = ￥120 左右
+b.gasPrice:200，Limit:619999 = ￥240 左右
+c.gasPrice:150，Limit:600000 = ￥170 左右
+d.gasPrice:300，Limit:600000 = ￥350 左右
+d.gasPrice:400，Limit:619999 = ￥480 左右
+e.gasPrice:500，Limit:619999 = ￥600 左右
+依此类推</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
