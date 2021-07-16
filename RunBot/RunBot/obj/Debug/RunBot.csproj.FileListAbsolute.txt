@@ -39,3 +39,5 @@ D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.csproj.GenerateResource.cache
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.csproj.CoreCompileInputs.cache
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.exe
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.pdb
+D:\DxBot\RunBot\RunBot\bin\Debug\Newtonsoft.Json.dll
+D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.csproj.CopyComplete

@@ -32,6 +32,10 @@ namespace RunBot
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDxBot));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnNewDate = new System.Windows.Forms.Button();
+            this.lalNetTime = new System.Windows.Forms.Label();
+            this.dtSetDate = new System.Windows.Forms.DateTimePicker();
+            this.chkSetTime = new System.Windows.Forms.CheckBox();
             this.chkKnowsPass = new System.Windows.Forms.CheckBox();
             this.lblShow = new System.Windows.Forms.Label();
             this.txtS = new System.Windows.Forms.TextBox();
@@ -59,12 +63,17 @@ namespace RunBot
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnNewDate);
+            this.groupBox1.Controls.Add(this.lalNetTime);
+            this.groupBox1.Controls.Add(this.dtSetDate);
+            this.groupBox1.Controls.Add(this.chkSetTime);
             this.groupBox1.Controls.Add(this.chkKnowsPass);
             this.groupBox1.Controls.Add(this.lblShow);
             this.groupBox1.Controls.Add(this.txtS);
@@ -92,10 +101,49 @@ namespace RunBot
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(733, 269);
+            this.groupBox1.Size = new System.Drawing.Size(878, 271);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "初始设置";
+            // 
+            // btnNewDate
+            // 
+            this.btnNewDate.Location = new System.Drawing.Point(740, 178);
+            this.btnNewDate.Name = "btnNewDate";
+            this.btnNewDate.Size = new System.Drawing.Size(75, 23);
+            this.btnNewDate.TabIndex = 20;
+            this.btnNewDate.Text = "同步时间";
+            this.btnNewDate.UseVisualStyleBackColor = true;
+            this.btnNewDate.Click += new System.EventHandler(this.btnNewDate_Click);
+            // 
+            // lalNetTime
+            // 
+            this.lalNetTime.AutoSize = true;
+            this.lalNetTime.ForeColor = System.Drawing.Color.Red;
+            this.lalNetTime.Location = new System.Drawing.Point(666, 236);
+            this.lalNetTime.Name = "lalNetTime";
+            this.lalNetTime.Size = new System.Drawing.Size(0, 12);
+            this.lalNetTime.TabIndex = 19;
+            // 
+            // dtSetDate
+            // 
+            this.dtSetDate.CustomFormat = "yyyy-mm-dd HH:mm:ss";
+            this.dtSetDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtSetDate.Location = new System.Drawing.Point(665, 210);
+            this.dtSetDate.Name = "dtSetDate";
+            this.dtSetDate.Size = new System.Drawing.Size(150, 21);
+            this.dtSetDate.TabIndex = 18;
+            // 
+            // chkSetTime
+            // 
+            this.chkSetTime.AutoSize = true;
+            this.chkSetTime.Location = new System.Drawing.Point(665, 182);
+            this.chkSetTime.Name = "chkSetTime";
+            this.chkSetTime.Size = new System.Drawing.Size(72, 16);
+            this.chkSetTime.TabIndex = 17;
+            this.chkSetTime.Text = "定时启动";
+            this.chkSetTime.UseVisualStyleBackColor = true;
+            this.chkSetTime.CheckedChanged += new System.EventHandler(this.chkSetTime_CheckedChanged);
             // 
             // chkKnowsPass
             // 
@@ -325,9 +373,9 @@ namespace RunBot
             // 
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 269);
+            this.groupBox2.Location = new System.Drawing.Point(0, 271);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(733, 332);
+            this.groupBox2.Size = new System.Drawing.Size(878, 468);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "使用说明";
@@ -338,7 +386,7 @@ namespace RunBot
             this.richTextBox1.Location = new System.Drawing.Point(3, 17);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(727, 312);
+            this.richTextBox1.Size = new System.Drawing.Size(872, 448);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -346,11 +394,15 @@ namespace RunBot
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // FrmDxBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 601);
+            this.ClientSize = new System.Drawing.Size(878, 739);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -396,5 +448,10 @@ namespace RunBot
         private System.Windows.Forms.Button btnTimeExec;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.CheckBox chkKnowsPass;
+        private System.Windows.Forms.CheckBox chkSetTime;
+        private System.Windows.Forms.DateTimePicker dtSetDate;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label lalNetTime;
+        private System.Windows.Forms.Button btnNewDate;
     }
 }

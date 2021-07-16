@@ -131,10 +131,15 @@ c.gasPrice:150，Limit:600000 = ￥170 左右
 d.gasPrice:300，Limit:600000 = ￥350 左右
 d.gasPrice:400，Limit:619999 = ￥480 左右
 e.gasPrice:500，Limit:619999 = ￥600 左右
-依此类推</value>
+依此类推
+8.定时启动前必须同步时间！！！
+9.定时启动和倒计时启动可以同时启用，走一套配置！</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>107, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Newtonsoft.Json;
+using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RunBot
@@ -21,7 +16,7 @@ namespace RunBot
         private static string presale_address = "presale_address = ";
         private static string number_of_entries = "number_of_entries = ";
         private static string mnemonic = "mnemonic = ";
-
+        private static string[] timeHosts = { "time.windows.com", "time.nist.gov" };
         public Process process = null;
 
         /// <summary>
@@ -85,7 +80,8 @@ namespace RunBot
         TimeSpan dtTo = new TimeSpan();
         private void timer1_Tick(object sender, EventArgs e)
         {
-              dtTo = dtTo.Subtract(new TimeSpan(0, 0, 1));
+            
+            dtTo = dtTo.Subtract(new TimeSpan(0, 0, 1));
             lblShow.Text = dtTo.Hours.ToString() + ":" + dtTo.Minutes.ToString() + ":" + dtTo.Seconds;
 
             if (dtTo.TotalSeconds <= 0.0)//当倒计时完毕
@@ -111,6 +107,19 @@ namespace RunBot
 
         }
 
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            string str = DateTime.Now.ToString();
+     
+            lalNetTime.Text = str;
+            if (dtSetDate.Value.ToString() == str)
+            {
+                lalNetTime.Text = string.Empty;
+                timer2.Enabled = false;
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\dxBuy.bat");
+            }
+        }
         private void btnExecMore_Click(object sender, EventArgs e)
         {
             if (btnLock.Text == "锁定")
@@ -136,6 +145,7 @@ namespace RunBot
             //    this.txtCmd.ScrollToCaret();
             //}
         }
+
 
         private void FrmDxBot_Load(object sender, EventArgs e)
         {
@@ -313,6 +323,60 @@ namespace RunBot
 
         }
 
+        /// <summary>
+        /// 获取标准北京时间，读取http://quan.suning.com/getSysTime.do
+        /// </summary>
+        /// <returns>返回网络时间</returns>
+        public DateTime GetBeijingTime()
+        {
+
+            DateTime dt;
+            WebRequest wrt = null;
+            WebResponse wrp = null;
+            try
+            {
+                wrt = WebRequest.Create("http://api.k780.com:88/?app=life.time&appkey=60345&sign=bafcd7cd46078c713a8a84b899a85fab&format=json");
+                wrp = wrt.GetResponse();
+
+                string html = string.Empty;
+                using (Stream stream = wrp.GetResponseStream())
+                {
+                    using (StreamReader sr = new StreamReader(stream, Encoding.UTF8))
+                    {
+                        html = sr.ReadToEnd();
+                    }
+                }
+
+                string[] tempArray = html.Split(',');
+
+                //{"sysTime2":"2021-07-16 21:49:38","sysTime1":"20210716214938"}
+                //这个需要引入Newtonsoft.Json这个DLL并using
+                //传入我们的实体类还有需要解析的JSON字符串这样就OK了。然后就可以通过实体类使用数据了。
+                Root rt = JsonConvert.DeserializeObject<Root>(html);
+
+
+
+                dt = DateTime.Parse(rt.result.datetime_1);
+            }
+            catch (WebException)
+            {
+                return DateTime.Parse("2011-1-1");
+            }
+            catch (Exception)
+            {
+                return DateTime.Parse("2011-1-1");
+            }
+            finally
+            {
+                if (wrp != null)
+                    wrp.Close();
+                if (wrt != null)
+                    wrt.Abort();
+            }
+            return dt;
+
+        }
+
         private void btnTimeExec_Click(object sender, EventArgs e)
         {
 
@@ -360,5 +424,79 @@ namespace RunBot
                 txtmnemonic.UseSystemPasswordChar = true;
 
         }
+
+
+        private void chkSetTime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSetTime.Checked)
+            {
+                if (btnLock.Text == "锁定")
+                {
+                    MessageBox.Show("先锁定所有设置！");
+                    chkSetTime.Checked = false;
+                    return;
+                }
+                timer2.Enabled = true;
+                timer2.Interval = 200;
+                timer2.Start();
+            }
+            else
+            {
+                lalNetTime.Text = string.Empty;
+                timer2.Enabled = false;
+            }
+        }
+
+        private void btnNewDate_Click(object sender, EventArgs e)
+        {
+            UpdateSystemDate.SetDate(GetBeijingTime());
+            MessageBox.Show("时间矫正完成！");
+        }
     }
+
+    //如果好用，请收藏地址，帮忙分享。
+    public class Result
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public string timestamp { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string datetime_1 { get; set; }
+        /// <summary>
+        /// 2021年07月16日 23时16分56秒
+        /// </summary>
+        public string datetime_2 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string week_1 { get; set; }
+        /// <summary>
+        /// 星期五
+        /// </summary>
+        public string week_2 { get; set; }
+        /// <summary>
+        /// 周五
+        /// </summary>
+        public string week_3 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string week_4 { get; set; }
+    }
+
+    public class Root
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public string success { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Result result { get; set; }
+    }
+
 }
