@@ -322,7 +322,7 @@ namespace RunBot
                
                 return;
             }
-            dtTo = new TimeSpan(Convert.ToInt32(txtHours.Text), Convert.ToInt32(txtMin.Text), Convert.ToInt32(txtS.Text)); //设置开始时间
+            dtTo = new TimeSpan(Convert.ToInt32(txtHours.Text), Convert.ToInt32(txtMin.Text), Convert.ToInt32(txtS.Text)-2); //设置开始时间
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Start();
