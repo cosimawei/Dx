@@ -127,7 +127,7 @@ namespace RunBot
             // 
             // dtSetDate
             // 
-            this.dtSetDate.CustomFormat = "yyyy-mm-dd HH:mm:ss";
+            this.dtSetDate.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtSetDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtSetDate.Location = new System.Drawing.Point(665, 210);
             this.dtSetDate.Name = "dtSetDate";
