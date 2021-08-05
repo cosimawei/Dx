@@ -41,3 +41,6 @@ D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.exe
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.pdb
 D:\DxBot\RunBot\RunBot\bin\Debug\Newtonsoft.Json.dll
 D:\DxBot\RunBot\RunBot\obj\Debug\RunBot.csproj.CopyComplete
+D:\Dx\RunBot\RunBot\bin\Debug\Newtonsoft.Json.dll
+D:\Dx\RunBot\RunBot\obj\Debug\RunBot.csprojAssemblyReference.cache
+D:\Dx\RunBot\RunBot\obj\Debug\RunBot.csproj.CopyComplete

@@ -28,6 +28,8 @@ namespace RunBot
         /// 文件内容
         /// </summary>
         string strInfor = string.Empty;
+
+        string strInforWrite = string.Empty;
         public FrmDxBot()
         {
             InitializeComponent();
@@ -240,7 +242,7 @@ namespace RunBot
                     {
                         strLine = mnemonic + txtmnemonic.Text;
                     }
-                    strInfor += strLine + "\n";
+                    strInforWrite += strLine + "\n";
 
                     strLine = m_streamReader.ReadLine();
                 }
@@ -302,7 +304,7 @@ namespace RunBot
 
             // 把richTextBox1中的内容写入文件
 
-            m_streamWriter.Write(strInfor);
+            m_streamWriter.Write(strInforWrite);
 
             //关闭此文件
 
@@ -310,7 +312,7 @@ namespace RunBot
 
             m_streamWriter.Close();
             //清空
-            strInfor = string.Empty;
+            strInforWrite = string.Empty;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
